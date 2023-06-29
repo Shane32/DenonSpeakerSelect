@@ -28,86 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.menuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.speakersAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.speakersBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.speakersABToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            notifyIcon1 = new NotifyIcon(components);
+            menuStrip1 = new ContextMenuStrip(components);
+            speakersAToolStripMenuItem = new ToolStripMenuItem();
+            speakersBToolStripMenuItem = new ToolStripMenuItem();
+            speakersABToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            timer1 = new System.Windows.Forms.Timer(components);
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.ContextMenuStrip = this.menuStrip1;
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            notifyIcon1.ContextMenuStrip = menuStrip1;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "Denon Speaker Select";
+            notifyIcon1.Visible = true;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.speakersAToolStripMenuItem,
-            this.speakersBToolStripMenuItem,
-            this.speakersABToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(181, 120);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { speakersAToolStripMenuItem, speakersBToolStripMenuItem, speakersABToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(181, 120);
             // 
             // speakersAToolStripMenuItem
             // 
-            this.speakersAToolStripMenuItem.Name = "speakersAToolStripMenuItem";
-            this.speakersAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.speakersAToolStripMenuItem.Text = "Speakers A";
-            this.speakersAToolStripMenuItem.Click += new System.EventHandler(this.speakersAToolStripMenuItem_Click);
+            speakersAToolStripMenuItem.Name = "speakersAToolStripMenuItem";
+            speakersAToolStripMenuItem.Size = new Size(180, 22);
+            speakersAToolStripMenuItem.Text = "Speakers A";
+            speakersAToolStripMenuItem.Click += speakersAToolStripMenuItem_Click;
             // 
             // speakersBToolStripMenuItem
             // 
-            this.speakersBToolStripMenuItem.Name = "speakersBToolStripMenuItem";
-            this.speakersBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.speakersBToolStripMenuItem.Text = "Speakers B";
-            this.speakersBToolStripMenuItem.Click += new System.EventHandler(this.speakersBToolStripMenuItem_Click);
+            speakersBToolStripMenuItem.Name = "speakersBToolStripMenuItem";
+            speakersBToolStripMenuItem.Size = new Size(180, 22);
+            speakersBToolStripMenuItem.Text = "Speakers B";
+            speakersBToolStripMenuItem.Click += speakersBToolStripMenuItem_Click;
             // 
             // speakersABToolStripMenuItem
             // 
-            this.speakersABToolStripMenuItem.Name = "speakersABToolStripMenuItem";
-            this.speakersABToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.speakersABToolStripMenuItem.Text = "Speakers A+B";
-            this.speakersABToolStripMenuItem.Click += new System.EventHandler(this.speakersABToolStripMenuItem_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            speakersABToolStripMenuItem.Name = "speakersABToolStripMenuItem";
+            speakersABToolStripMenuItem.Size = new Size(180, 22);
+            speakersABToolStripMenuItem.Text = "Speakers A+B";
+            speakersABToolStripMenuItem.Click += speakersABToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "Form1";
+            Text = "Form1";
+            menuStrip1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
