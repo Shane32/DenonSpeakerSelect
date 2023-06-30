@@ -72,4 +72,38 @@ public class Denon
         B,
         AB,
     }
+
+    public static async Task SetVolume(int volume)
+    {
+        if (volume < 0 || volume > 100)
+            throw new ArgumentOutOfRangeException(nameof(volume), "Volume must be between 0 and 100.");
+
+        // If the volume is a single digit, we'll need to prepend a '0' to make it valid for the receiver
+        var volumeString = volume.ToString().PadLeft(2, '0');
+
+        await SendCommandAsync($"MV{volumeString}");
+    }
+
+    public static async Task SetMute(bool isMuted)
+    {
+        if ((await GetMuteState()) == isMuted)
+            return;
+        string command = isMuted ? "MUON" : "MUOFF";
+        await SendCommandAsync(command);
+    }
+
+    public static async Task<bool> GetMuteState()
+    {
+        var status = await SendCommandAsync("MU?");
+        switch (status)
+        {
+            case "MUON":
+                return true;
+            case "MUOFF":
+                return false;
+            default:
+                throw new ApplicationException("Unknown mute state: " + status);
+        }
+    }
+
 }
